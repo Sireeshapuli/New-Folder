@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align-last:center;
+            margin: 2em;
+            background-color: beige;
+            color: blue;
+        }
+        h1{
+            text-align: center;
+            text-decoration: underline;
+            text-transform: uppercase;
+            color: brown;
+            
+
+        }
+        button{
+            background-color:rgb(219, 194, 83)
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Employee details & Salary</h1>
+
+    <form action="jsday3salary.html" method="GET"> 
+        
+    <label for="empName">Employee name:</label>
+    <input type="text" id="empName" required></input>
+             <br><br>
+ <label for="empId">Employee ID:</label>
+ <input type="text" id="empId" required></input>
+         <br><br>
+ <label for="joinDate">Joining Date:</label>
+<input type="date" id="joinDate" required></input>
+     <br><br>
+<label for="hrsWorked">Hours Worked:</label>
+<input type="number" id="hrsWorked" required></input>
+    <br><br>  
+ <div>
+    <label for="desig">Designation:</label>
+    <select id = "desig">
+      <option>Select</option>
+      <option value = "manager">manager</option>
+      <option value = "consultant">consultant</option>
+      <option value = "trainee">trainee</option>
+      </select>
+</div>
+    <br><br>  
+                                
+         <button onclick="employee()">Submit</button>  
+
+         <p id="result"></p>
+         
+     
+</body>
+<script>
+
+function employee() {
+            var empName = document.getElementById("empName").value;
+            var empId = document.getElementById("empId").value;
+            var joinDate = document.getElementById("joinDate").value;
+            var hrsWorked = document.getElementById("hrsWorked").value;
+            var desig = document.getElementById("desig").value;
+            
+            var salary
+            if (desig =='manager'){
+             salary = hrsWorked*90;
+            }
+            else if (desig =='consultant'){
+                salary = hrsWorked*70;
+            }
+            else if (desig =='trainee'){
+                salary = hrsWorked*45;
+
+            }
+
+            var output = empName+" who is a "+"'"+desig+"'"+" will get "+"$"+salary;
+
+            localStorage.setItem("totalSalary",output);
+         }
+   </script>
+
+
+</html>
