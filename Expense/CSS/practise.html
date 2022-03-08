@@ -1,11 +1,81 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div , button , input
+        {
+            text-align:center;
+        }
+        input[type=text]:focus
+          {
+            background-color: pink  ;
+          }
+    </style>
+    <script>
+        function saveFile() {
+            const name = document.getElementById('name').value;
+            const id = document.getElementById('employeeid').value;
+            const date = document.getElementById('date').value;
+            var hours = document.getElementById('hours').value;
+            const designation = document.getElementById('designation').value;
+
+            var salary;
+            if(designation=="manager")
+                salary = hours*90;
+            }else if(designation=="consultant"){
+                salary = (hours*70);
+            }else if(designation=="trainee"){
+                salary = (hours*45);
+            }
+            var outputText = name+" who is a "+"'"+designation+"'"+" will get "+"$"+salary;
+            localStorage.setItem('finalsalary',outputText);
+         }
+    </script>
+</head>
 <body>
+     <form action="salary.html" method="GET"> 
+    <div class="row ">
+        <label for="name"  style="color: blue;">Name:</label>         
+        <input type="text"  id="name" placeholder="Enter your Name" required>
+    </div>
+    <br>
+    <div class="row ">
+        <label for="employeeid" style="color: blue;"> EmployeeId:</label>
+        <input type="text"  id="employeeid" placeholder="EmployeeId" required>
+    </div>
+    <br>
+    <div class="row">
+        <label for="date" style="color: blue;">Joining Date:</label>
+        <input type="date" max="today" id="date" placeholder="Enter the Joining Date" required>
+    </div>
+    <br>  
+    <div class="row">
+        <label for="hours" style="color: blue;" >No of Hours:</label>
+        <input type="number"  id="hours" placeholder="Enter No of Hours Worked" required>
+    </div>
+    <br>  
+      <div class="row">
+        <label for="designation" style="color: blue;" >Designation:</label>
+        <select id = "designation" >
+          <option>Select</option>
+          <option value = "manager">Manager</option>
+          <option value = "consultant">Consultant</option>
+          <option value = "trainee">Trainee</option>
+          </select>
+    </div>
+    <div>
+        <br>
+        <br>
+      <button type="submit"  onclick="saveFile()">Submit</button>
 
-<h2>HTML Iframes</h2>
-<p>You can use the height and width attributes to specify the size of the iframe:</p>
+    </div>
 
-<iframe src="CSSDay1.html" height="200" width="300" title="Iframe Example"></iframe>
+     </form>
+
 
 </body>
-</html>
+</html> 

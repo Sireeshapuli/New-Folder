@@ -4,7 +4,7 @@
 body {
     margin: 50px;
     background-image: url(nature1.jpg);
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     align-content: center;
     position: relative;
     bottom: 40px;

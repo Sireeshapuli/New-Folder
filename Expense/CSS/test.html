@@ -4,30 +4,103 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="test.css">
+    <title>Calculation</title>
+    <style> 
+        button,input[type=text]:focus{
+            background-color: pink;
+            }
+            
+            .center {
+                margin: auto;
+                width: 80%;
+                --border: 3px solid #73AD21;
+                --padding: 10px;
+            }
+            .button {
+                margin: auto;
+                width: 30%;
+                --border: 3px solid #73AD21;
+                --padding: 10px, 15px;
+            }
+            .button > button{
+                width: 40px;
+                 height: 40px;
+            }
+
+            label,input {
+               font-size: x-large;
+            }
+            
+           
+    </style>
+    
 </head>
 
 <body>
-    <div class="parent">
-        <div class="box" id="one"><a href="#">One</a></div>
-        <div class="box" id="two">Two</div>
-        <div class="box" id="three">Three</div>
-        <div class="box" id="four">Four</div>
-    </div>
-
     
-    <br>
-    <br>
-    <div class="overflow">
-        <p>This content needs to be displayed using the overflow property.
-             If the content is bigger than the container there sould be some
-              way by which all the content will be shown to the user.
-        </p>
-    </div>
-    <p>
-        <img src="nature.jpg" alt="No Image">
-    </p>
+    <h1 style="color:rgb(42, 165, 118); text-align: center; ">Addition, Subtraction, Multiplication &amp; Division using JavaScript!</h3>
+    <hr>
+    <br><br>
+    <div class="center">
+                <label for="first" style="color: red;">First Number:</label> 
+                <input type="text"  id="first"  >
+                &emsp;
+               <label for="second" style="color:red">Second Number:</label> 
+                <input  type="text" id="second">
+                <br><br><br>
+                <div class="button">
+                    <button onclick="Addition()" > + </button>
+                    <button onclick="Subtraction()"> - </button>
+                    <button onclick="Multiplication()"> * </button>
+                    <button onclick="Division()"> / </button>
+                </div>
+                <br><br>
+                <div style="text-align: center; width: 80%;">
+                    <label for="result" style="color: red;">Result:</label>
+                    <input type="text" id="result">
+                 </div>
+                
+         </div>       
+        <br><br>
+         <div style="text-align: center; width: 90%;">
+            <img src="calc.jpg" alt="Girl in a jacket" width="300" height="300" >
+         </div>
+         <br><br>
 
+                <script>
+                    
+                    
+                    function Addition() {
+                        var a = Number(document.getElementById("first").value);
+                        var b = Number(document.getElementById("second").value);
+                        var c; 
+                      c= a+b;
+                      document.getElementById("result").value = c;
+                    }
+                    function Subtraction() {
+                        var a = Number(document.getElementById("first").value);
+                        var b = Number(document.getElementById("second").value);
+                        var c;       
+                    c = a-b;
+                      document.getElementById("result").value = c;
+                    }
+                    function Multiplication() {
+                        var a = Number(document.getElementById("first").value);
+                        var b = Number(document.getElementById("second").value);
+                        var c; 
+                    c = a*b;
+                      document.getElementById("result").value = c;
+                    }
+                    function Division() {
+                        var a = Number(document.getElementById("first").value);
+                        var b = Number(document.getElementById("second").value);
+                        var c; 
+                     c = a/b;
+                     document.getElementById("result").value = c;
+                    }
+                </script>
+
+
+                
 </body>
 </html>

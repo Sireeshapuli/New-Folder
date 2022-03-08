@@ -27,16 +27,21 @@
     <p id="result"></p>
 
     <script>
+        var attempts=1
+       
         
         function guessnumber() {
-            var guess = document.getElementById("guess").value;
-            if (guess==6){
+            var A = document.getElementById("guess").value;
+            if (A==3){
                 
         
-             document.getElementById("result").innerHTML="Congrats...you won!";}
+             document.getElementById("result").innerHTML="Congrats...you won!! It took "  +attempts+  " attempts!!";
+            attempts=1;}
             
             else{
-                document.getElementById("result").innerHTML= "Not really..try again!!";
+                ++attempts;
+                
+                document.getElementById("result").innerHTML= "Not really..try again!!"; 
             }
             
           

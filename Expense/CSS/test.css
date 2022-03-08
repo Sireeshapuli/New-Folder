@@ -1,55 +1,86 @@
-.parent{
+.name{
+    display:inline;
     
-}
-.box{
-    display: inline;
-    background: red;
-    height: 200px;
-    width: 200px;
-    border:2px blue solid
-}
-#two{
-    background: green;
-    top: 20px;
-}
-
-.overflow{
-    background-color: coral;
-    border: 1px solid;
-    width: 300px;
-    height: 300px;
-    overflow: auto;
-}
-img{
-    width: 150px;
+    margin-right: 1rem;
+   
+  }
+  #list:hover{
+    background-color: aqua;
+  }
+  
+   .container{
+     padding:1em
+   } 
+  
+  .cell{
+    background-color: aquamarine;
+    padding: 1em;
+  }
+  .flex{
+    display:flex;
+    gap:1em;
+    flex-wrap: wrap;
+  }
+  .flex > .cell{
+    flex-grow:2;
+  }
+  .flex > .cell:nth-child(2){
+    flex-grow:4;
+  }
+  .grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap:1em;
+  }
+  #animation{
+    width:100px;
     height: 100px;
-    float: left;
-}
-#div4{
-    float: left;
-    padding: 10px;
-    border: 2px solid;
-}
-
-#div5{
-    padding: 10px;
-    border: 2px solid;
-    clear: left;
-}
-
-#noclear{
-    border: 2px;
-    overflow: auto;
-}
-#img1{
-    position: absolute;
-    left: 0px;
-    z-index: -1;
-}
-#box{
-    margin-top: 100px;
-    border: 2px solid;
-    padding: 20px;
-    width: 200px;
-    box-sizing: border-box;
-}
+    background-color: blue;
+    animation-name: my-animation;
+    animation-duration: 5s;
+    animation-iteration-count: 4;
+  }
+  @keyframes my-animation {
+    from{background-color: blue;}
+    to{background-color: green;}
+  }
+  /*
+  @keyframes my-animation {
+    0%{background-color: blue;}
+    25%{background-color: green;}
+    50%{background-color: red;}
+    100%{background-color: pink;}
+  }*/
+  .animation{
+    width:100px;
+    height: 100px;
+    position: relative;
+    background-color: rgb(51, 160, 160);
+    animation-name: new-animation;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    animation-play-state: ;
+    
+  
+  }
+  @keyframes new-animation{
+  from{left:0px;}
+  to{left:250px;}
+  
+  }
+  #div11 {
+    animation-timing-function: linear
+  }
+  #div22{
+    animation-timing-function: ease
+  }
+  
+  #div33{
+    animation-timing-function: ease-in;
+  }
+  #div55{
+    animation-timing-function: ease-out ;
+  }
+  #div55{
+    animation-timing-function: ease-in-out;
+  }

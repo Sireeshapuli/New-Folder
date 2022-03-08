@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+
+    <style>
+    body{
+        background-color:rgba(177, 182, 184, 0.815);
+        margin:2em;
+    }
+    .grid{
+        display: grid;       
+        margin:10px;
+        padding: 2em;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        
+    
+    }
+    button:focus{
+        background-color: rgb(136, 186, 199);
+    }
+    button{
+        
+        width:50px;
+        height: 100px;
+        background-color:rgba(235, 233, 241, 0.856);
+        border-radius: 10px;
+        font-size:x-large;
+        font-weight: 400;
+        cursor: pointer;
+               
+        
+    }
+    .button:hover {
+            background-color:rgb(182, 170, 112);
+            font-weight: bolder;
+            transition: 0.5s ease-in-out;
+            
+        }
+    input{
+        background-color: rgb(238, 235, 225);
+        width:10em;
+        height:2em ;
+        padding-bottom:5px
+    }
+    .result{
+        padding-right: 20px;
+     display: flex;    
+     
+    }
+.reset {
+    width: 100px;
+    height: 50px;
+    margin: auto;
+    display: flex;
+}
+       
+</style>
+</head>
+
+
+<body>
+<h1>Javascript Operations</h1><br><br>
+<table>
+    <td><label for="first">First Number:</label></td>
+    <td><input type="number" id="first"></td><td></td>
+    <td><label for="second">Second Number:</label></td>
+    <td><input type="number" id="second"></td>
+    
+</table>
+<div class="grid">
+    <div><button onclick="Sum()">+</button></div>
+    <div><button onclick="Differnce()">-</button></div>
+    <div><button onclick="Multiplication()">*</button></div>
+    <div><button onclick="Division()">/</button></div>
+</div>
+<br><br>
+
+<td><label for="result" >Result:</label></td>
+<td><input type="text" class="result" id="result"></td>
+<div><button onclick="reset()" class="reset">Reset</button></div>
+
+
+
+<script>
+var a,b,c;
+function Sum()
+{
+    a= Number(document.getElementById("first").value);
+    b= Number(document.getElementById("second").value);
+    c=a+b;
+    document.getElementById("result").value= c;
+}
+function Differnce()
+{
+    a= Number(document.getElementById("first").value);
+    b= Number(document.getElementById("second").value);
+    c=a-b;
+    document.getElementById("result").value= c;
+}
+function Multiplication()
+{
+    a= Number(document.getElementById("first").value);
+    b= Number(document.getElementById("second").value);
+    c=a*b;
+    document.getElementById("result").value= c;
+}
+function Division()
+{
+    a= Number(document.getElementById("first").value);
+    b= Number(document.getElementById("second").value);
+    c=a/b;
+    document.getElementById("result").value= c;
+}
+function reset()
+{
+    a= document.getElementById("first").value=null;
+    b= document.getElementById("second").value=null;
+    c= document.getElementById("result").value=null;
+    
+}
+</script>
+
+    
+</body>
+</html>
