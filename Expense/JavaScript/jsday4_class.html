@@ -27,9 +27,9 @@
 </head>
 <body>
     
+    
     <h1>Employee details & Salary</h1>
-
-    <form action="jsday3salary.html" method="GET"> 
+ 
         
     <label for="empName">Employee name:</label>
     <input type="text" id="empName" required></input>
@@ -54,85 +54,83 @@
 </div>
     <br><br>  
                                 
-         <button onclick="employee()">Submit</button>  
+         <button onclick="submit()">Submit</button>  
 
          <p id="result"></p>
          
      
 </body>
+
+
 <script>
 
-function employee() {
+function submit() {
             var empName = document.getElementById("empName").value;
             var empId = document.getElementById("empId").value;
             var joinDate = document.getElementById("joinDate").value;
             var hrsWorked = document.getElementById("hrsWorked").value;
             var desig = document.getElementById("desig").value;
 
-          }
+          
+
+
+            const employee = new Employee();
+            employee.setempName=empName;
+            employee.setdesig=desig;
+            employee.sethrsWorked=hrsWorked;
+
+            
+         }
             
           
-          //calculating salary using class
+    //calculating salary using class
 
-          class employee{
-              #empName
-              set setempName(empName){
+class Employee{
+              #empName;    
+               set empName(empName){
               this.#empName=empName;
-          }
-              get getempName(){
+              }
+              get empName(){
                  return this.#empName;
-              }
-              
-              #empId
-              set setempID(empId){
-              this.#empId=empId;    
-              }
-              get getempId(){
-              return this.#empId;    
-              }
-  
-              #joinDate
-              set joinDate(joinDate){
-              this.#joinDate=joinDate;    
-              }
-              get getjoinDate(){
-              return this.#joinDate;    
-              }
-
-              #hrsWorked
-              set sethrsWorked(hrsWorked){
+              }              
+                         
+              #hrsWorked;            
+              set hrsWorked(hrsWorked){
               this.#hrsWorked=hrsWorked;    
               }
-              get gethrsWorked(){
+              get hrsWorked(){
               return this.#hrsWorked;    
               }
 
-              #desig
-              set setdesig(desig){
+              #desig;
+              set desig(desig){
               this.#desig=desig;    
               }
-              get getempId(){
+              get desig(){
               return this.#desig;    
-              }
-          }
+              }       
 
-            var salary
-            salaryCalc()
-            if (#desig =='manager'){
-             salary = #hrsWorked*90;
+            
+    salaryCalc() {
+            let salary;
+            if (this.desig =='manager'){
+             salary = this.hrsWorked*90;
             }
-            else if (#desig =='consultant'){
-                salary = #hrsWorked*70;
+            else if (this.desig =='consultant'){
+                salary = this.hrsWorked*70;
             }
-            else if (#desig =='trainee'){
-                salary = #hrsWorked*45;
-
+            else if (this.desig =='trainee'){
+                salary = this.hrsWorked*45;
             }
+        
+           
+            document.getElementById('result').innerHTML = this.empName+" who is a "+"'"+this.desig+"'"+" will get "+"$"+salary;
 
-            var output = getempName+" who is a "+"'"+getdesig+"'"+" will get "+"$"+salary;
-
-            return output;
+            
         }
+    }    
+    
+        
         
    </script>
 
